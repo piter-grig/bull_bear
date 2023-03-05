@@ -42,11 +42,11 @@ for files in input_list:
     for i in range(len(data1) - 1):
         if data1[i, 7] < 5:
             bull_cases += 1
-            money = money - (1 + taxe) * data1[i, 4]
+            money = money - (1 + taxe) * data1[i+1, 4]
             # money = money - (1 + taxe) * (data1[i, 1] + data1[i, 4]) / 2
             coins += 1
         if data1[i, 7] > 5:
-            money = money + (1 - taxe) * data1[i, 4]
+            money = money + (1 - taxe) * data1[i+1, 4]
             # money = money + (1 - taxe) * (data1[i, 1] + data1[i, 4]) / 2
             coins -= 1
         # print(f'money = {money}, coins={coins}')
